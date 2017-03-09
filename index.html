@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="midtermApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MidTerm Management</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text" rel="stylesheet">
+    <script src="js/midterm.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-controller="midtermCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">MidTerm Management</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#details">Details</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Midterm Team Management</h1>
+                        <h3>Manage Students and their teams for the Midterms</h3>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/vibhuteneha" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/vibhuteneha" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Add Group</h2>
+                    <form ng-submit="addGroup()">           
+                  <div class="form-group">
+                    <label for="newModuleName">Node Module</label>
+                    <input type="text" class="form-control" id="newModuleName" ng-model="modulename" placeholder="Enter the module name">
+                  </div>
+                  <div class="form-group">
+                    <label for="newModuleDescription">Description</label>
+                    <textarea class="form-control" rows="4" id="newModuleDescription" ng-model="moduledes" placeholder="Enter a description of the node module"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg"><i class="fa fa-users"></i> <span class="network-name">Add Group</span></button>
+                  </div>
+                </form>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/group.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Add Student</h2>
+                    <form ng-submit="addStudent()">
+                  <div class="form-group">
+                    <label for="newStudentName">Student Name</label>
+                    <input type="text" class="form-control" id="newStudentName" ng-model="studentname" placeholder="Enter the student's name">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="targetGroup">Group</label><br>
+                    <select class="form-control" ng-model = "opt">
+                      <option ng-repeat = "grp in groups" value="{{grp.modulename}}">{{grp.modulename}}</option>
+                    </select>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-lg"><i class="fa fa-user-plus"></i> <span class="network-name">Add Student</span></button>
+                  </div>
+                </form>
+
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/student.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Add Task</h2>
+                    <form ng-submit="addTask()">
+                  <div class="form-group">
+                    <label for="newTaskText">Task</label>
+                    <input type="text" class="form-control" id="newTaskText" ng-model="taskdes" placeholder="Enter the task description">
+                  </div>
+                  <div class="form-group">
+                    <label for="targetGroup">Group</label><br>
+                    <select class="form-control" ng-model = "opt1">
+                      <option ng-repeat = "grp in groups" value="{{grp.modulename}}">{{grp.modulename}}</option>
+                    </select>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-lg"><i class="fa fa-tasks"></i> <span class="network-name">Add Task</span></button>
+                  </div>
+                </form>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/todo.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+    <a  name="details"></a>
+    <div class="banner1">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Total Groups <span>-{{groups.length}}</span> </h2>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!--/.banner1-->
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row" ng-repeat="grp in groups">
+                <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+            <h2 class="section-heading">{{grp.modulename}} <span class="cursor" ng-click="removegrp(grp)"><i class="fa fa-trash" aria-hidden="true"></i></span></h2>
+
+                <div class="col-lg-5 col-sm-6">
+                   <h3>Description</h3>
+                   <p class="lead">{{grp.moduledes}}</p> 
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <h3>Total Members - {{grp.students.length}}</h3>
+                    <ul ng-repeat="stu in grp.students" class="list-unstyled lead">
+                        <li>{{stu}} <span class="cursor" ng-click = "removestu(stu,grp)"> <i class="fa fa-trash" aria-hidden="true"></i></span></li>
+                    </ul>
+                    <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                    <h3>Tasks - {{completedtasks(grp)}} of {{grp.tasks.length}} Completed and {{remainingtasks(grp)}} Remaining</h3>
+                    <ul  class="list-unstyled">
+                                    <li ng-repeat="task in grp.tasks" style="padding-bottom:10px; ">
+                                        <div style="display: inline-block;">
+                                        <select ng-model="stud" ng-change ="selection(this)" class="form-control">
+                                            <option ng-repeat = "stu in grp.students" value="{{stu}}">{{stu}}</option>
+                                        </select></div>
+                                        <div style="display: inline-block;"><input type="checkbox" ng-model="task.done">
+                                            <span class="done-{{task.done}} lead" >{{task.taskdes}} assigned to {{stud}}. </span>
+                                             <span class="cursor lead" ng-click = "removetask(task,grp)"> <i class="fa fa-trash" aria-hidden="true"></i></span></div>
+                                    </li>
+                                </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect with Me:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/vibhuteneha" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/vibhuteneha" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#details">Details</a>
+                        </li>
+
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; My Company 2017. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
